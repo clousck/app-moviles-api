@@ -1,0 +1,19 @@
+services:
+  - name: fastapi-app
+    type: web
+    env: python
+    region: oregon # Cambia según la región que prefieras
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 8000
+    plan: free # Cambia a "starter" o superior si necesitas más recursos
+    envVars:
+      - key: DRIVER_NAME
+        value: "ODBC Driver 18 for SQL Server"
+      - key: SERVER_NAME
+        value: "app-moviles-utn-server"
+      - key: DATABASE_NAME
+        value: "app-moviles-utn-database"
+      - key: UID
+        value: "victorees"
+      - key: PWD
+        value: "Palommv123."
